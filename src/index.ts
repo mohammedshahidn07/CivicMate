@@ -8,6 +8,11 @@ import { registerApiRoutes } from './api/api.routes.js';
 async function bootstrap() {
   const server = await McpApplicationFactory.create(AppModule);
 
+  console.log(
+  '[BOOT DIAGNOSTIC]',
+  'PORT =', process.env.PORT,
+  'ARGV =', process.argv.slice(2)
+  );
   const port = Number(process.env.PORT || 3000);
 
   await server.start({

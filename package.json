@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "nitrostack-cli dev",
     "build": "nitrostack-cli build",
-    "start": "nitrostack-cli start",
-    "start:prod": "nitrostack-cli start",
+    "start": "nitrostack-cli start --port 8012",
+    "start:prod": "nitrostack-cli start --port 8012",
     "upgrade": "nitrostack-cli upgrade",
     "install:all": "nitrostack-cli install",
     "widget": "npm --prefix src/widgets"
