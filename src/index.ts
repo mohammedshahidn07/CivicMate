@@ -24,9 +24,20 @@ async function bootstrap() {
   }
 
   app.use(express.json());
+
+  // Root health-check endpoint
+  app.get('/', (_req, res) => {
+    res.status(200).json({
+      status: 'ok',
+      application: 'CivicMate',
+    });
+  });
+
+  // Register CivicMate REST API routes
   registerApiRoutes(app);
 
-  console.log('CivicMate REST API is ready.');
+  console.log('CivicMate REST API routes registered.');
+  console.log(`CivicMate REST API is ready on port ${port}.`);
 }
 
 bootstrap().catch((error) => {
