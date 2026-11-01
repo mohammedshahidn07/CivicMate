@@ -8,7 +8,7 @@ import { registerApiRoutes } from './api/api.routes.js';
 async function bootstrap() {
   const server = await McpApplicationFactory.create(AppModule);
 
-  const port = Number(process.env.PORT || 3000);
+  const port = Number(process.env.PORT || 8012);
 
   await server.start({
     transport: 'dual',
